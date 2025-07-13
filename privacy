@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私政策 / Privacy Policy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>隐私政策 / Privacy Policy</h1>
+    <p>Your privacy is important to us.</p>
+    <p>This application does not collect, store, or share any personal data.<br>
+    The app does not connect to the internet and does not request any user permissions.</p>
+
+    <p>我们非常重视您的隐私。</p>
+    <p>本应用不会收集、存储或分享任何个人数据。<br>
+    本应用不联网，也不会请求任何用户权限。</p>
+</body>
+</html>
