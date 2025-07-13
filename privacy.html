@@ -15,16 +15,149 @@
         p {
             line-height: 1.6;
         }
+        .lang-select {
+            margin-bottom: 24px;
+        }
     </style>
 </head>
 <body>
-    <h1>隐私政策 / Privacy Policy</h1>
-    <p>Your privacy is important to us.</p>
-    <p>This application does not collect, store, or share any personal data.<br>
-    The app does not connect to the internet and does not request any user permissions.</p>
+    <div class="lang-select">
+        <label for="language">选择语言 / Select Language: </label>
+        <select id="language" onchange="setLang(this.value)">
+            <option value="zh">简体中文</option>
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+            <option value="pl">Polski</option>
+            <option value="da">Dansk</option>
+            <option value="ru">Русский</option>
+            <option value="zh-tw">繁體中文</option>
+            <option value="ko">한국어</option>
+            <option value="nl">Nederlands</option>
+            <option value="fi">Suomi</option>
+            <option value="ms">Melayu</option>
+            <option value="it">Italiano</option>
+            <option value="cs">Čeština</option>
+            <option value="sv">Svenska</option>
+            <option value="vi">Tiếng Việt</option>
+        </select>
+    </div>
 
-    <p>我们非常重视您的隐私。</p>
-    <p>本应用不会收集、存储或分享任何个人数据。<br>
-    本应用不联网，也不会请求任何用户权限。</p>
+    <div id="content-zh">
+        <h1>隐私政策</h1>
+        <p>我们非常重视您的隐私。</p>
+        <p>本应用不会收集、存储或分享任何个人数据。<br>
+           本应用不联网，也不会请求任何用户权限。</p>
+    </div>
+
+    <div id="content-en" style="display:none">
+        <h1>Privacy Policy</h1>
+        <p>Your privacy is important to us.</p>
+        <p>This application does not collect, store, or share any personal data.<br>
+           The app does not connect to the internet and does not request any user permissions.</p>
+    </div>
+
+    <div id="content-ar" style="display:none;direction:rtl;text-align:right">
+        <h1>سياسة الخصوصية</h1>
+        <p>خصوصيتك مهمة جدًا بالنسبة لنا.</p>
+        <p>هذا التطبيق لا يجمع أو يخزن أو يشارك أي بيانات شخصية.<br>
+           التطبيق لا يتصل بالإنترنت ولا يطلب أي أذونات من المستخدم.</p>
+    </div>
+
+    <div id="content-pl" style="display:none">
+        <h1>Polityka prywatności</h1>
+        <p>Twoja prywatność jest dla nas ważna.</p>
+        <p>Ta aplikacja nie gromadzi, nie przechowuje ani nie udostępnia żadnych danych osobowych.<br>
+           Aplikacja nie łączy się z internetem i nie żąda żadnych uprawnień użytkownika.</p>
+    </div>
+
+    <div id="content-da" style="display:none">
+        <h1>Privatlivspolitik</h1>
+        <p>Din privatliv er vigtigt for os.</p>
+        <p>Denne applikation indsamler, gemmer eller deler ikke nogen personlige oplysninger.<br>
+           Appen forbinder ikke til internettet og anmoder ikke om nogen brugerrettigheder.</p>
+    </div>
+
+    <div id="content-ru" style="display:none">
+        <h1>Политика конфиденциальности</h1>
+        <p>Ваша конфиденциальность очень важна для нас.</p>
+        <p>Это приложение не собирает, не хранит и не передает никакие персональные данные.<br>
+           Приложение не подключается к интернету и не запрашивает никаких разрешений пользователя.</p>
+    </div>
+
+    <div id="content-zh-tw" style="display:none">
+        <h1>隱私政策</h1>
+        <p>我們非常重視您的隱私。</p>
+        <p>本應用不會收集、儲存或分享任何個人資料。<br>
+           本應用不連網，也不會請求任何使用者權限。</p>
+    </div>
+
+    <div id="content-ko" style="display:none">
+        <h1>개인정보 처리방침</h1>
+        <p>당사는 귀하의 개인정보를 중요하게 생각합니다.</p>
+        <p>이 애플리케이션은 어떠한 개인정보도 수집, 저장 또는 공유하지 않습니다.<br>
+           앱은 인터넷에 연결되지 않으며, 어떠한 사용자 권한도 요청하지 않습니다.</p>
+    </div>
+
+    <div id="content-nl" style="display:none">
+        <h1>Privacybeleid</h1>
+        <p>Uw privacy is belangrijk voor ons.</p>
+        <p>Deze applicatie verzamelt, bewaart of deelt geen persoonlijke gegevens.<br>
+           De app maakt geen verbinding met het internet en vraagt geen gebruikersrechten aan.</p>
+    </div>
+
+    <div id="content-fi" style="display:none">
+        <h1>Yksityisyyskäytäntö</h1>
+        <p>Yksityisyytesi on meille tärkeää.</p>
+        <p>Tämä sovellus ei kerää, tallenna tai jaa mitään henkilötietoja.<br>
+           Sovellus ei yhdistä internetiin eikä pyydä mitään käyttäjäoikeuksia.</p>
+    </div>
+
+    <div id="content-ms" style="display:none">
+        <h1>Dasar Privasi</h1>
+        <p>Privasi anda penting kepada kami.</p>
+        <p>Aplikasi ini tidak mengumpul, menyimpan atau berkongsi sebarang data peribadi.<br>
+           Aplikasi ini tidak berhubung ke internet dan tidak meminta sebarang kebenaran pengguna.</p>
+    </div>
+
+    <div id="content-it" style="display:none">
+        <h1>Informativa sulla privacy</h1>
+        <p>La tua privacy è importante per noi.</p>
+        <p>Questa applicazione non raccoglie, memorizza o condivide alcun dato personale.<br>
+           L'app non si connette a Internet e non richiede alcun permesso utente.</p>
+    </div>
+
+    <div id="content-cs" style="display:none">
+        <h1>Zásady ochrany osobních údajů</h1>
+        <p>Vaše soukromí je pro nás důležité.</p>
+        <p>Tato aplikace neshromažďuje, neukládá ani nesdílí žádné osobní údaje.<br>
+           Aplikace se nepřipojuje k internetu a nevyžaduje žádná oprávnění uživatele.</p>
+    </div>
+
+    <div id="content-sv" style="display:none">
+        <h1>Integritetspolicy</h1>
+        <p>Din integritet är viktig för oss.</p>
+        <p>Denna applikation samlar inte in, lagrar eller delar någon personlig information.<br>
+           Appen ansluter inte till internet och begär inga användarbehörigheter.</p>
+    </div>
+
+    <div id="content-vi" style="display:none">
+        <h1>Chính sách quyền riêng tư</h1>
+        <p>Quyền riêng tư của bạn rất quan trọng với chúng tôi.</p>
+        <p>Ứng dụng này không thu thập, lưu trữ hoặc chia sẻ bất kỳ dữ liệu cá nhân nào.<br>
+           Ứng dụng không kết nối internet và không yêu cầu bất kỳ quyền nào của người dùng.</p>
+    </div>
+
+    <script>
+        function setLang(lang) {
+            var langs = [
+                'zh','en','ar','pl','da','ru','zh-tw','ko','nl',
+                'fi','ms','it','cs','sv','vi'
+            ];
+            for (var i = 0; i < langs.length; i++) {
+                document.getElementById('content-' + langs[i]).style.display = 'none';
+            }
+            document.getElementById('content-' + lang).style.display = '';
+        }
+    </script>
 </body>
 </html>
