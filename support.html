@@ -3,11 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>技术支持 / Technical Support</title>
+    <title>技术支持 / Support</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+        }
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+        .tab {
+            padding: 8px 16px;
+            margin-right: 4px;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            background: #f8f8f8;
+            cursor: pointer;
+            border-radius: 8px 8px 0 0;
+            font-size: 15px;
+        }
+        .tab.active {
+            background: #fff;
+            border-bottom: 2px solid #fff;
+            font-weight: bold;
+            color: #1976d2;
+        }
+        .tab:not(.active):hover {
+            background: #e0e0e0;
+        }
+        .tab-content {
+            border: 1px solid #ccc;
+            padding: 24px;
+            background: #fff;
+            border-radius: 0 8px 8px 8px;
+            margin-top: -1px;
         }
         h1 {
             color: #333;
@@ -15,132 +46,136 @@
         p {
             line-height: 1.6;
         }
-        .lang-select {
-            margin-bottom: 24px;
+        a {
+            color: #1976d2;
         }
     </style>
 </head>
 <body>
-    <div class="lang-select">
-        <label for="language">选择语言 / Select Language: </label>
-        <select id="language" onchange="setLang(this.value)">
-            <option value="zh">简体中文</option>
-            <option value="en">English</option>
-            <option value="ar">العربية</option>
-            <option value="pl">Polski</option>
-            <option value="da">Dansk</option>
-            <option value="ru">Русский</option>
-            <option value="zh-tw">繁體中文</option>
-            <option value="ko">한국어</option>
-            <option value="nl">Nederlands</option>
-            <option value="fi">Suomi</option>
-            <option value="ms">Melayu</option>
-            <option value="it">Italiano</option>
-            <option value="cs">Čeština</option>
-            <option value="sv">Svenska</option>
-            <option value="vi">Tiếng Việt</option>
-        </select>
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('zh')">简体中文</div>
+        <div class="tab" onclick="showTab('en')">English</div>
+        <div class="tab" onclick="showTab('ar')">العربية</div>
+        <div class="tab" onclick="showTab('pl')">Polski</div>
+        <div class="tab" onclick="showTab('da')">Dansk</div>
+        <div class="tab" onclick="showTab('ru')">Русский</div>
+        <div class="tab" onclick="showTab('zh-tw')">繁體中文</div>
+        <div class="tab" onclick="showTab('ko')">한국어</div>
+        <div class="tab" onclick="showTab('nl')">Nederlands</div>
+        <div class="tab" onclick="showTab('fi')">Suomi</div>
+        <div class="tab" onclick="showTab('ms')">Melayu</div>
+        <div class="tab" onclick="showTab('it')">Italiano</div>
+        <div class="tab" onclick="showTab('cs')">Čeština</div>
+        <div class="tab" onclick="showTab('sv')">Svenska</div>
+        <div class="tab" onclick="showTab('vi')">Tiếng Việt</div>
     </div>
-    <div id="content-zh">
+
+    <div id="tab-zh" class="tab-content">
         <h1>技术支持</h1>
-        <p>欢迎来到我们的技术支持页面！如果您在使用应用时遇到问题，请通过以下方式联系我们。</p>
-        <h2>联系方式</h2>
-        <p>电子邮件：<a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+        <p>如需帮助或有任何问题，欢迎通过电子邮件联系我们：</p>
+        <p>邮箱：<a href="mailto:your@email.com">your@email.com</a></p>
+        <p>我们会尽快回复您。</p>
     </div>
-    <div id="content-en" style="display:none">
-        <h1>Technical Support</h1>
-        <p>Welcome to our technical support page! If you encounter any issues while using the app, please contact us through the following methods:</p>
-        <h2>Contact Information</h2>
-        <p>Email: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    <div id="tab-en" class="tab-content" style="display:none">
+        <h1>Support</h1>
+        <p>If you need help or have any questions, please contact us by email:</p>
+        <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
+        <p>We will reply to you as soon as possible.</p>
     </div>
-    <div id="content-ar" style="display:none;direction:rtl;text-align:right">
+    <div id="tab-ar" class="tab-content" style="display:none;direction:rtl;text-align:right">
         <h1>الدعم الفني</h1>
-        <p>مرحبًا بكم في صفحة الدعم الفني الخاصة بنا! إذا واجهت أي مشكلة أثناء استخدام التطبيق، يرجى التواصل معنا عبر الطرق التالية:</p>
-        <h2>معلومات الاتصال</h2>
-        <p>البريد الإلكتروني: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+        <p>إذا كنت بحاجة إلى مساعدة أو لديك أي استفسار، يرجى التواصل معنا عبر البريد الإلكتروني:</p>
+        <p>البريد الإلكتروني: <a href="mailto:your@email.com">your@email.com</a></p>
+        <p>سنرد عليك في أقرب وقت ممكن.</p>
     </div>
-    <div id="content-pl" style="display:none">
+    <div id="tab-pl" class="tab-content" style="display:none">
         <h1>Wsparcie techniczne</h1>
-        <p>Witamy na naszej stronie wsparcia technicznego! Jeśli napotkasz jakiekolwiek problemy podczas korzystania z aplikacji, skontaktuj się z nami w jeden z poniższych sposobów:</p>
-        <h2>Dane kontaktowe</h2>
-        <p>Email: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+        <p>Jeśli potrzebujesz pomocy lub masz pytania, skontaktuj się z nami przez e-mail:</p>
+        <p>E-mail: <a href="mailto:your@email.com">your@email.com</a></p>
+        <p>Odpowiemy najszybciej, jak to możliwe.</p>
     </div>
-    <div id="content-da" style="display:none">
-        <h1>Teknisk support</h1>
-        <p>Velkommen til vores tekniske supportside! Hvis du oplever problemer med at bruge appen, bedes du kontakte os på følgende måder:</p>
-        <h2>Kontaktinformation</h2>
-        <p>Email: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    <div id="tab-da" class="tab-content" style="display:none">
+        <h1>Support</h1>
+        <p>Hvis du har brug for hjælp eller har spørgsmål, så kontakt os venligst via e-mail:</p>
+        <p>E-mail: <a href="mailto:your@email.com">your@email.com</a></p>
+        <p>Vi vender tilbage til dig hurtigst muligt.</p>
     </div>
-    <div id="content-ru" style="display:none">
+    <div id="tab-ru" class="tab-content" style="display:none">
         <h1>Техническая поддержка</h1>
-        <p>Добро пожаловать на страницу технической поддержки! Если у вас возникли проблемы при использовании приложения, пожалуйста, свяжитесь с нами одним из следующих способов:</p>
-        <h2>Контактная информация</h2>
-        <p>Электронная почта: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+        <p>Если вам нужна помощь или у вас есть вопросы, пожалуйста, свяжитесь с нами по электронной почте:</p>
+        <p>Эл. почта: <a href="mailto:your@email.com">your@email.com</a></p>
+        <p>Мы ответим вам как можно скорее.</p>
     </div>
-    <div id="content-zh-tw" style="display:none">
+    <div id="tab-zh-tw" class="tab-content" style="display:none">
         <h1>技術支援</h1>
-        <p>歡迎來到我們的技術支援頁面！如果您在使用應用程式時遇到任何問題，請通過以下方式聯絡我們：</p>
-        <h2>聯絡資訊</h2>
-        <p>電子郵件：<a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+        <p>如需協助或有任何問題，歡迎通過電子郵件聯繫我們：</p>
+        <p>電子信箱：<a href="mailto:your@email.com">your@email.com</a></p>
+        <p>我們會盡快回覆您。</p>
     </div>
-    <div id="content-ko" style="display:none">
+    <div id="tab-ko" class="tab-content" style="display:none">
         <h1>기술 지원</h1>
-        <p>저희 기술 지원 페이지에 오신 것을 환영합니다! 앱 사용 중 문제가 발생하면 아래 방법으로 연락해 주세요.</p>
-        <h2>연락처 정보</h2>
-        <p>이메일: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+        <p>도움이 필요하시거나 문의 사항이 있으시면 이메일로 연락해 주세요:</p>
+        <p>이메일: <a href="mailto:your@email.com">your@email.com</a></p>
+        <p>최대한 빨리 답변드리겠습니다.</p>
     </div>
-    <div id="content-nl" style="display:none">
+    <div id="tab-nl" class="tab-content" style="display:none">
         <h1>Technische ondersteuning</h1>
-        <p>Welkom op onze technische ondersteuningspagina! Als u problemen ondervindt bij het gebruik van de app, neem dan contact met ons op via de volgende manieren:</p>
-        <h2>Contactinformatie</h2>
-        <p>E-mail: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+        <p>Als u hulp nodig heeft of vragen heeft, neem dan contact met ons op per e-mail:</p>
+        <p>E-mail: <a href="mailto:your@email.com">your@email.com</a></p>
+        <p>Wij reageren zo snel mogelijk.</p>
     </div>
-    <div id="content-fi" style="display:none">
+    <div id="tab-fi" class="tab-content" style="display:none">
         <h1>Tuki</h1>
-        <p>Tervetuloa teknisen tuen sivullemme! Jos kohtaat ongelmia sovelluksen käytössä, ota meihin yhteyttä seuraavilla tavoilla:</p>
-        <h2>Yhteystiedot</h2>
-        <p>Sähköposti: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+        <p>Jos tarvitset apua tai sinulla on kysyttävää, ota yhteyttä sähköpostitse:</p>
+        <p>Sähköposti: <a href="mailto:your@email.com">your@email.com</a></p>
+        <p>Vastaamme mahdollisimman pian.</p>
     </div>
-    <div id="content-ms" style="display:none">
+    <div id="tab-ms" class="tab-content" style="display:none">
         <h1>Sokongan Teknikal</h1>
-        <p>Selamat datang ke halaman sokongan teknikal kami! Jika anda menghadapi sebarang masalah semasa menggunakan aplikasi, sila hubungi kami melalui cara berikut:</p>
-        <h2>Maklumat Perhubungan</h2>
-        <p>E-mel: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+        <p>Jika anda memerlukan bantuan atau mempunyai sebarang pertanyaan, sila hubungi kami melalui e-mel:</p>
+        <p>E-mel: <a href="mailto:your@email.com">your@email.com</a></p>
+        <p>Kami akan membalas anda secepat mungkin.</p>
     </div>
-    <div id="content-it" style="display:none">
+    <div id="tab-it" class="tab-content" style="display:none">
         <h1>Supporto tecnico</h1>
-        <p>Benvenuto nella nostra pagina di supporto tecnico! Se riscontri problemi durante l'utilizzo dell'app, contattaci attraverso i seguenti metodi:</p>
-        <h2>Informazioni di contatto</h2>
-        <p>Email: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+        <p>Se hai bisogno di aiuto o hai domande, contattaci via e-mail:</p>
+        <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
+        <p>Ti risponderemo il prima possibile.</p>
     </div>
-    <div id="content-cs" style="display:none">
+    <div id="tab-cs" class="tab-content" style="display:none">
         <h1>Technická podpora</h1>
-        <p>Vítejte na naší stránce technické podpory! Pokud narazíte na problémy při používání aplikace, kontaktujte nás prosím následujícími způsoby:</p>
-        <h2>Kontaktní informace</h2>
-        <p>Email: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+        <p>Pokud potřebujete pomoc nebo máte dotazy, kontaktujte nás prosím e-mailem:</p>
+        <p>E-mail: <a href="mailto:your@email.com">your@email.com</a></p>
+        <p>Odpovíme co nejdříve.</p>
     </div>
-    <div id="content-sv" style="display:none">
-        <h1>Teknisk support</h1>
-        <p>Välkommen till vår tekniska supportsida! Om du stöter på problem när du använder appen, vänligen kontakta oss på följande sätt:</p>
-        <h2>Kontaktinformation</h2>
-        <p>E-post: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    <div id="tab-sv" class="tab-content" style="display:none">
+        <h1>Support</h1>
+        <p>Om du behöver hjälp eller har frågor, kontakta oss via e-post:</p>
+        <p>E-post: <a href="mailto:your@email.com">your@email.com</a></p>
+        <p>Vi svarar så snart vi kan.</p>
     </div>
-    <div id="content-vi" style="display:none">
+    <div id="tab-vi" class="tab-content" style="display:none">
         <h1>Hỗ trợ kỹ thuật</h1>
-        <p>Chào mừng bạn đến với trang hỗ trợ kỹ thuật của chúng tôi! Nếu bạn gặp bất kỳ vấn đề nào khi sử dụng ứng dụng, vui lòng liên hệ với chúng tôi theo các cách sau:</p>
-        <h2>Thông tin liên hệ</h2>
-        <p>Email: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+        <p>Nếu bạn cần hỗ trợ hoặc có bất kỳ câu hỏi nào, vui lòng liên hệ với chúng tôi qua email:</p>
+        <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
+        <p>Chúng tôi sẽ phản hồi bạn sớm nhất có thể.</p>
     </div>
+
     <script>
-        function setLang(lang) {
+        function showTab(lang) {
             var langs = [
                 'zh','en','ar','pl','da','ru','zh-tw','ko','nl',
                 'fi','ms','it','cs','sv','vi'
             ];
             for (var i = 0; i < langs.length; i++) {
-                document.getElementById('content-' + langs[i]).style.display = 'none';
+                document.getElementById('tab-' + langs[i]).style.display = 'none';
             }
-            document.getElementById('content-' + lang).style.display = '';
+            document.getElementById('tab-' + lang).style.display = '';
+            var tabs = document.getElementsByClassName('tab');
+            for (var j = 0; j < tabs.length; j++) {
+                tabs[j].classList.remove('active');
+            }
+            event.target.classList.add('active');
         }
     </script>
 </body>
