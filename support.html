@@ -15,15 +15,133 @@
         p {
             line-height: 1.6;
         }
+        .lang-select {
+            margin-bottom: 24px;
+        }
     </style>
 </head>
 <body>
-    <h1>技术支持 / Technical Support</h1>
-    <p>欢迎来到我们的技术支持页面！如果您在使用应用时遇到问题，请通过以下方式联系我们。<br>
-    Welcome to our technical support page! If you encounter any issues while using the app, please contact us through the following methods:</p>
-    
-    <h2>联系方式 / Contact Information</h2>
-    <p>电子邮件：<a href="mailto:89713084@qq.com">89713084@qq.com</a><br>
-    Email: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    <div class="lang-select">
+        <label for="language">选择语言 / Select Language: </label>
+        <select id="language" onchange="setLang(this.value)">
+            <option value="zh">简体中文</option>
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+            <option value="pl">Polski</option>
+            <option value="da">Dansk</option>
+            <option value="ru">Русский</option>
+            <option value="zh-tw">繁體中文</option>
+            <option value="ko">한국어</option>
+            <option value="nl">Nederlands</option>
+            <option value="fi">Suomi</option>
+            <option value="ms">Melayu</option>
+            <option value="it">Italiano</option>
+            <option value="cs">Čeština</option>
+            <option value="sv">Svenska</option>
+            <option value="vi">Tiếng Việt</option>
+        </select>
+    </div>
+    <div id="content-zh">
+        <h1>技术支持</h1>
+        <p>欢迎来到我们的技术支持页面！如果您在使用应用时遇到问题，请通过以下方式联系我们。</p>
+        <h2>联系方式</h2>
+        <p>电子邮件：<a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    </div>
+    <div id="content-en" style="display:none">
+        <h1>Technical Support</h1>
+        <p>Welcome to our technical support page! If you encounter any issues while using the app, please contact us through the following methods:</p>
+        <h2>Contact Information</h2>
+        <p>Email: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    </div>
+    <div id="content-ar" style="display:none;direction:rtl;text-align:right">
+        <h1>الدعم الفني</h1>
+        <p>مرحبًا بكم في صفحة الدعم الفني الخاصة بنا! إذا واجهت أي مشكلة أثناء استخدام التطبيق، يرجى التواصل معنا عبر الطرق التالية:</p>
+        <h2>معلومات الاتصال</h2>
+        <p>البريد الإلكتروني: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    </div>
+    <div id="content-pl" style="display:none">
+        <h1>Wsparcie techniczne</h1>
+        <p>Witamy na naszej stronie wsparcia technicznego! Jeśli napotkasz jakiekolwiek problemy podczas korzystania z aplikacji, skontaktuj się z nami w jeden z poniższych sposobów:</p>
+        <h2>Dane kontaktowe</h2>
+        <p>Email: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    </div>
+    <div id="content-da" style="display:none">
+        <h1>Teknisk support</h1>
+        <p>Velkommen til vores tekniske supportside! Hvis du oplever problemer med at bruge appen, bedes du kontakte os på følgende måder:</p>
+        <h2>Kontaktinformation</h2>
+        <p>Email: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    </div>
+    <div id="content-ru" style="display:none">
+        <h1>Техническая поддержка</h1>
+        <p>Добро пожаловать на страницу технической поддержки! Если у вас возникли проблемы при использовании приложения, пожалуйста, свяжитесь с нами одним из следующих способов:</p>
+        <h2>Контактная информация</h2>
+        <p>Электронная почта: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    </div>
+    <div id="content-zh-tw" style="display:none">
+        <h1>技術支援</h1>
+        <p>歡迎來到我們的技術支援頁面！如果您在使用應用程式時遇到任何問題，請通過以下方式聯絡我們：</p>
+        <h2>聯絡資訊</h2>
+        <p>電子郵件：<a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    </div>
+    <div id="content-ko" style="display:none">
+        <h1>기술 지원</h1>
+        <p>저희 기술 지원 페이지에 오신 것을 환영합니다! 앱 사용 중 문제가 발생하면 아래 방법으로 연락해 주세요.</p>
+        <h2>연락처 정보</h2>
+        <p>이메일: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    </div>
+    <div id="content-nl" style="display:none">
+        <h1>Technische ondersteuning</h1>
+        <p>Welkom op onze technische ondersteuningspagina! Als u problemen ondervindt bij het gebruik van de app, neem dan contact met ons op via de volgende manieren:</p>
+        <h2>Contactinformatie</h2>
+        <p>E-mail: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    </div>
+    <div id="content-fi" style="display:none">
+        <h1>Tuki</h1>
+        <p>Tervetuloa teknisen tuen sivullemme! Jos kohtaat ongelmia sovelluksen käytössä, ota meihin yhteyttä seuraavilla tavoilla:</p>
+        <h2>Yhteystiedot</h2>
+        <p>Sähköposti: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    </div>
+    <div id="content-ms" style="display:none">
+        <h1>Sokongan Teknikal</h1>
+        <p>Selamat datang ke halaman sokongan teknikal kami! Jika anda menghadapi sebarang masalah semasa menggunakan aplikasi, sila hubungi kami melalui cara berikut:</p>
+        <h2>Maklumat Perhubungan</h2>
+        <p>E-mel: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    </div>
+    <div id="content-it" style="display:none">
+        <h1>Supporto tecnico</h1>
+        <p>Benvenuto nella nostra pagina di supporto tecnico! Se riscontri problemi durante l'utilizzo dell'app, contattaci attraverso i seguenti metodi:</p>
+        <h2>Informazioni di contatto</h2>
+        <p>Email: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    </div>
+    <div id="content-cs" style="display:none">
+        <h1>Technická podpora</h1>
+        <p>Vítejte na naší stránce technické podpory! Pokud narazíte na problémy při používání aplikace, kontaktujte nás prosím následujícími způsoby:</p>
+        <h2>Kontaktní informace</h2>
+        <p>Email: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    </div>
+    <div id="content-sv" style="display:none">
+        <h1>Teknisk support</h1>
+        <p>Välkommen till vår tekniska supportsida! Om du stöter på problem när du använder appen, vänligen kontakta oss på följande sätt:</p>
+        <h2>Kontaktinformation</h2>
+        <p>E-post: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    </div>
+    <div id="content-vi" style="display:none">
+        <h1>Hỗ trợ kỹ thuật</h1>
+        <p>Chào mừng bạn đến với trang hỗ trợ kỹ thuật của chúng tôi! Nếu bạn gặp bất kỳ vấn đề nào khi sử dụng ứng dụng, vui lòng liên hệ với chúng tôi theo các cách sau:</p>
+        <h2>Thông tin liên hệ</h2>
+        <p>Email: <a href="mailto:89713084@qq.com">89713084@qq.com</a></p>
+    </div>
+    <script>
+        function setLang(lang) {
+            var langs = [
+                'zh','en','ar','pl','da','ru','zh-tw','ko','nl',
+                'fi','ms','it','cs','sv','vi'
+            ];
+            for (var i = 0; i < langs.length; i++) {
+                document.getElementById('content-' + langs[i]).style.display = 'none';
+            }
+            document.getElementById('content-' + lang).style.display = '';
+        }
+    </script>
 </body>
 </html>
